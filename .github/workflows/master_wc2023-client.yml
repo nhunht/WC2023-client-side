@@ -52,7 +52,7 @@ jobs:
           
       - name: Extract files
         run: |
-          tar -xzvf node-app/node-app.tar.gz
+          tar -xzvf node-app.tar.gz
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
