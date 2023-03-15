@@ -26,12 +26,16 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+          
+      - name: Compress files
+        run: |
+          tar -czvf node-app.tar.gz *
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: node-app.tar.gz
 
   deploy:
     runs-on: windows-latest
@@ -45,6 +49,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
+          
+      - name: Extract files
+        run: |
+          tar -xzvf node-app/node-app.tar.gz
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -52,5 +60,5 @@ jobs:
         with:
           app-name: 'wc2023-client'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A117FDDD9FF34B60B0BEA432FA2840FC }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ec9cf299cfb84156a0322bbf19ebbfbd }}
           package: .
