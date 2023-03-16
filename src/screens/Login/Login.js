@@ -62,74 +62,94 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="bg">
       <div className="row">
-        <div className="col-md-5 mx-auto">
+        <div className="col-md-5 mx-auto" style={{ marginTop: "20vh" }}>
           <div id="first">
-            <div className="myform form ">
-              <div className="logo mb-3">
+            <article className="message is-link">
+              <div className="message-header">
                 <div className="col-md-12 text-center">
                   <h1>Login</h1>
                 </div>
               </div>
-              <form method="post" name="login">
-                <div className="form-group">
-                  <label htmlFor="exampleInputEmail1">Email address</label>
-                  <input
-                    type="email"
-                    name="username"
-                    className="form-control"
-                    id="email"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter email"
-                    onChange={(e) =>
-                      setUser({ ...user, username: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="exampleInputEmail1">Password</label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter Password"
-                    onChange={(e) =>
-                      setUser({ ...user, password: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="col-md-12 text-center ">
-                  <Link
-                    className=" btn btn-block mybtn btn-primary tx-tfm"
-                    onClick={handleLogin}
-                  >
-                    Login
-                  </Link>
-                </div>
-                <div className="col-md-12 mb-3" style={{ paddingTop: "16px" }}>
-                  <p className="text-center">
-                    <Link
-                      className="google btn mybtn"
-                      style={{ backgroundColor: "ButtonShadow" }}
-                      onClick={handleGoogleLogin}
+              <div className="message-body">
+                <form method="post">
+                  <div className="form-group">
+                    <label
+                      className="fas fa-envelope"
+                      htmlFor="exampleInputEmail1"
                     >
-                      Sign in using Google
+                      Email address
+                    </label>
+                    <input
+                      type="email"
+                      name="username"
+                      className="form-control"
+                      id="email"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                      onChange={(e) =>
+                        setUser({ ...user, username: e.target.value })
+                      }
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label className="fas fa-key" htmlFor="exampleInputEmail1">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="form-control"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter Password"
+                      onChange={(e) =>
+                        setUser({ ...user, password: e.target.value })
+                      }
+                    />
+                  </div>
+                  <div className="col-md-12 text-center">
+                    <Link
+                      className="btn btn-block mybtn btn-primary tx-tfm"
+                      style={{ textDecoration: "none", color: "white" }}
+                      onClick={handleLogin}
+                    >
+                      Signin
                     </Link>
-                  </p>
-                </div>
-                <div className="form-group">
-                  <p className="text-center">
-                    Don't have account?{" "}
-                    <Link to="/register" id="signup">
-                      Sign up here
-                    </Link>
-                  </p>
-                </div>
-              </form>
-            </div>
+                  </div>
+                  <div
+                    className="col-md-12 mb-3"
+                    style={{ paddingTop: "16px" }}
+                  >
+                    <p className="text-center">
+                      <Link
+                        className="google btn mybtn"
+                        style={{
+                          backgroundColor: "blue",
+                          textDecoration: "none",
+                          color: "white",
+                        }}
+                        onClick={handleGoogleLogin}
+                      >
+                        Sign in using Google
+                      </Link>
+                    </p>
+                  </div>
+                  <div className="form-group">
+                    <p className="text-center">
+                      Don't have account?
+                      <Link
+                        to="/register"
+                        style={{ color: "red", marginLeft: "4px" }}
+                      >
+                        Signup here
+                      </Link>
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </article>
           </div>
         </div>
       </div>

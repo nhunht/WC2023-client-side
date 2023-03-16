@@ -72,19 +72,22 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-5 mx-auto">
+    <div className="bg">
+      <div className="row ">
+        <div className="col-md-5 mx-auto" style={{ marginTop: "15vh" }}>
           <div id="second">
-            <div className="myform form ">
-              <div className="logo mb-3">
+            <article className="message is-link">
+              <div className="message-header">
                 <div className="col-md-12 text-center">
                   <h1>SignUp</h1>
                 </div>
               </div>
-              <form method="POST">
+              <div className="message-body">
                 <div className="form-group">
-                  <label htmlFor="exampleInputEmail1">Email address</label>
+                  <label className="fas fa-envelope" htmlFor="exampleInputEmail1">
+                    {" "}
+                    Email address
+                  </label>
                   <input
                     type="email"
                     name="username"
@@ -92,13 +95,14 @@ const Register = () => {
                     id="username"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
-                    onChange={(e) =>
-                      setUser({ ...user, username: e.target.value })
-                    }
+                    onChange={(e) => setUser({ ...user, username: e.target.value })}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="exampleInputEmail1">Password</label>
+                  <label className="fas fa-key" htmlFor="exampleInputEmail1">
+                    {" "}
+                    Password
+                  </label>
                   <input
                     type="password"
                     name="password"
@@ -106,13 +110,14 @@ const Register = () => {
                     className="form-control"
                     aria-describedby="password"
                     placeholder="Enter Password"
-                    onChange={(e) =>
-                      setUser({ ...user, password: e.target.value })
-                    }
+                    onChange={(e) => setUser({ ...user, password: e.target.value })}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="name">Name</label>
+                  <label className="fas fa-user" htmlFor="name">
+                    {" "}
+                    Name
+                  </label>
                   <input
                     type="text"
                     name="name"
@@ -124,7 +129,9 @@ const Register = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="">YOB</label>
+                  <label className="fas fa-scroll-old" htmlFor="">
+                    YOB
+                  </label>
                   <input
                     type="number"
                     name="YOB"
@@ -138,7 +145,9 @@ const Register = () => {
                 </div>
                 <div className="col-md-12 text-center mb-3">
                   <Link
-                    className="btn btn-block mybtn btn-primary tx-tfm"
+                    type="submit"
+                    className=" btn btn-block mybtn btn-primary tx-tfm"
+                    style={{textDecoration: "none", color: "white"}}
                     onClick={handleSignUp}
                   >
                     Register
@@ -153,8 +162,8 @@ const Register = () => {
                     </p>
                   </div>
                 </div>
-              </form>
-            </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
