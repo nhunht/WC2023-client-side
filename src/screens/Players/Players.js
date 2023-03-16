@@ -18,6 +18,7 @@ const Players = (props) => {
     goals: -1,
     image: "",
   });
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     document.title = title;
@@ -25,7 +26,10 @@ const Players = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let response = await PlayerApi.gets({ pageIndex: pageIndex ?? 1 });
+      let response = await PlayerApi.gets({
+        pageIndex: pageIndex ?? 1,
+        search: search,
+      });
 
       setTitle(response.title);
       setPlayers(response.players);
@@ -38,7 +42,7 @@ const Players = (props) => {
     } catch (error) {
       console.log(error);
     }
-  }, [pageIndex]);
+  }, [pageIndex, search]);
 
   const fetchData = async () => {
     let response = await PlayerApi.gets({ pageIndex: pageIndex ?? 1 });
@@ -121,6 +125,23 @@ const Players = (props) => {
         style={{ backgroundColor: "rgb(205, 223, 247)" }}
       >
         <div className="buttons is-right">
+          <div
+            className="control has-icons-left"
+            style={{ marginBottom: "8px" }}
+          >
+            <input
+              className="input"
+              type="text"
+              placeholder="Search"
+              onChange={(e) => {
+                setPageIndex(1);
+                setSearch(e.target.value);
+              }}
+            />
+            <span className="icon is-left">
+              <i className="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </div>
           <button
             className="button"
             style={{ backgroundColor: "green", color: "white" }}

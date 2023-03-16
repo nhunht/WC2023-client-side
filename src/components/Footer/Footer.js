@@ -40,7 +40,7 @@ const Footer = (props) => {
         className="pagination-next"
         style={{ color: "black" }}
         onClick={() => setPageIndex(Number(pageIndex) + 1)}
-        disabled={pageIndex === totalPages}
+        disabled={pageIndex >= totalPages}
       >
         <i className="fas fa-arrow-right" aria-hidden="true"></i>
       </button>

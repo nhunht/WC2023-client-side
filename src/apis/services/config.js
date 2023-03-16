@@ -1,4 +1,4 @@
-const baseURL = "https://wc2023-server.azurewebsites.net/api";
+const baseURL = "http://localhost:3000/api";
 
 const API_CONFIG = {
   headers: {
