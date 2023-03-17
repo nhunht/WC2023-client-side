@@ -18,18 +18,23 @@ const Players = (props) => {
     goals: -1,
     image: "",
   });
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(null);
 
   useEffect(() => {
     document.title = title;
   }, [title]);
 
   useEffect(() => {
+    let params = {
+      pageIndex: pageIndex ?? 1,
+    }
+
+    if (search) {
+      params.search = search;
+    }
+
     const fetchData = async () => {
-      let response = await PlayerApi.gets({
-        pageIndex: pageIndex ?? 1,
-        search: search,
-      });
+      let response = await PlayerApi.gets(params);
 
       setTitle(response.title);
       setPlayers(response.players);
@@ -135,7 +140,7 @@ const Players = (props) => {
               placeholder="Search"
               onChange={(e) => {
                 setPageIndex(1);
-                setSearch(e.target.value);
+                setSearch(e.target.value.toLocaleLowerCase());
               }}
             />
             <span className="icon is-left">

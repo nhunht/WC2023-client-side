@@ -12,18 +12,23 @@ const Nations = (props) => {
     name: "",
     description: "",
   });
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(null);
 
   useEffect(() => {
     document.title = title;
   }, [title]);
 
   useEffect(() => {
+    let params = {
+      pageIndex: pageIndex ?? 1,
+    }
+
+    if (search) {
+      params.search = search;
+    }
+
     const fetchData = async () => {
-      let response = await NationApi.gets({
-        pageIndex: pageIndex ?? 1,
-        search: search,
-      });
+      let response = await NationApi.gets(params);
 
       setTitle(response.title);
       setNations(response.nations);

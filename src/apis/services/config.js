@@ -1,4 +1,5 @@
-const baseURL = "http://localhost:3000/api";
+const baseURL = "https://wc2023-server.azurewebsites.net/api";
+const baseURL2 = "/api";
 
 const API_CONFIG = {
   headers: {
@@ -7,10 +8,10 @@ const API_CONFIG = {
   },
 
   endpoints: {
-    home: `${baseURL}/home`,
-    players: `${baseURL}/players`,
-    nations: `${baseURL}/nations`,
-    user: `${baseURL}/user`,
+    home: `${baseURL2}/home`,
+    players: `${baseURL2}/players`,
+    nations: `${baseURL2}/nations`,
+    user: `${baseURL2}/user`,
   },
 };
 
