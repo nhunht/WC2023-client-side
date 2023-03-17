@@ -16,7 +16,7 @@ const EditNation = () => {
   useEffect(() => {
     const fetchData = async () => {
       let response = await NationApi.get(
-        window.location.pathname.split("/")[3]
+        window.location.pathname.split("/")[2]
       );
 
       setTitle(response.title);
@@ -41,7 +41,7 @@ const EditNation = () => {
       let status = await NationApi.put(nation._id, nation);
 
       if (status < 400) {
-        navigate("/user/nations");
+        navigate("/nations");
       }
     } catch (error) {
       console.log(error);
@@ -106,7 +106,7 @@ const EditNation = () => {
                 >
                   Save
                 </Link>
-                <Link to="/user/nations">
+                <Link to="/nations">
                   <button className="button" type="button">
                     Back
                   </button>

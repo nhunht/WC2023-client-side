@@ -41,7 +41,7 @@ const User = (props) => {
               <td>{user.YOB}</td>
               <td>
                 <div className="buttons are-small">
-                  <Link to={`/user/edit-user/${user._id}`}>
+                  <Link to={`/edit-user/${user._id}`}>
                     <button className="button is-warning is-light ">
                       Edit
                     </button>

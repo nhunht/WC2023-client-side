@@ -19,7 +19,7 @@ const EditPlayer = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await PlayerApi.get(
-        window.location.pathname.split("/")[3]
+        window.location.pathname.split("/")[2]
       );
 
       setTitle(response.title);
@@ -47,7 +47,7 @@ const EditPlayer = () => {
       let status = await PlayerApi.put(player._id, player);
 
       if (status < 400) {
-        navigate("/user/players");
+        navigate("/players");
       }
     } catch (error) {
       console.log(error);
@@ -226,7 +226,7 @@ const EditPlayer = () => {
                 >
                   Save
                 </Link>
-                <Link to="/user/players">
+                <Link to="/players">
                   <button className="button" type="button">
                     Back
                   </button>

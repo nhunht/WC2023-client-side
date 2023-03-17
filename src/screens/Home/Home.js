@@ -72,7 +72,7 @@ const Home = (props) => {
                           >
                             <div className="dropdown-content">
                               <Link
-                                to={`/user/edit-player/${player._id}`}
+                                to={`/edit-player/${player._id}`}
                                 className="dropdown-item"
                                 style={{
                                   backgroundColor: "green",

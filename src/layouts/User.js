@@ -33,12 +33,12 @@ const UserLayout = () => {
 
   return (
     <>
-      <Header path="/user" user={user} />
+      <Header path="" user={user} />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/players" element={<Players />} />
         <Route path="/nations" element={<Nations />} />
-        <Route path="/list" element={<User user={user} />} />
+        <Route path="/user" element={<User user={user} />} />
         <Route path="/edit-player/*" element={<EditPlayer />} />
         <Route path="/edit-nation/*" element={<EditNation />} />
         <Route path="/edit-user/*" element={<EditUser user={user} setUser={setUser} />} />

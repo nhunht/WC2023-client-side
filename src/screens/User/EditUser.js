@@ -16,7 +16,7 @@ const EditUser = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await UserApi.get(
-        window.location.pathname.split("/")[3]
+        window.location.pathname.split("/")[2]
       );
 
       setTitle(response.title);
@@ -44,7 +44,7 @@ const EditUser = (props) => {
         if (user._id === props.user._id) {
           props.setUser(user);
         }
-        navigate("/user/list");
+        navigate("/user");
       }
     } catch (error) {
       console.log(error);
@@ -106,7 +106,7 @@ const EditUser = (props) => {
               <button className="button is-primary" onClick={handleUpdateUser}>
                 Save
               </button>
-              <Link to="/user/list">
+              <Link to="/user">
                 <button className="button" type="button">
                   Back
                 </button>

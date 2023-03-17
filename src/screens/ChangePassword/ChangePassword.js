@@ -27,7 +27,7 @@ const ChangePassword = () => {
       await changePassword(newPassword);
       alert("Your password has been updated successfully!");
       // Clear the password fields
-      navigate("/user/list");
+      navigate("/user");
     } catch (error) {
       let message = error.message;
       message = message

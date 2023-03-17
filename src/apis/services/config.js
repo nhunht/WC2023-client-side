@@ -8,10 +8,10 @@ const API_CONFIG = {
   },
 
   endpoints: {
-    home: `${baseURL2}/home`,
-    players: `${baseURL2}/players`,
-    nations: `${baseURL2}/nations`,
-    user: `${baseURL2}/user`,
+    home: `${baseURL}/home`,
+    players: `${baseURL}/players`,
+    nations: `${baseURL}/nations`,
+    user: `${baseURL}/user`,
   },
 };
 

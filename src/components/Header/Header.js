@@ -39,7 +39,7 @@ const Header = (props) => {
               alt="Logo"
             />
           </NavLink>
-          <NavLink to={`${path}`} style={{ color: "black" }}>
+          <NavLink to="/" style={{ color: "black" }}>
             <span className="icon is-small">
               <i className="fas fa-home" aria-hidden="true"></i>
             </span>
@@ -87,7 +87,7 @@ const Header = (props) => {
                   >
                     <span>Welcome!</span>
                     <div className="dropdown-menu-min-width">
-                      <Link className="dropdown-item" to={path + "/list"}>
+                      <Link className="dropdown-item" to={path + "/user"}>
                         <i
                           className="fa fa-user"
                           style={{ paddingRight: "4px" }}

@@ -14,7 +14,7 @@ const AuthorRoute = () => {
   } else {
     return (
       <Routes>
-        <Route path="/user/*" element={<UserLayout />} />
+        <Route path="/*" element={<UserLayout />} />
       </Routes>
     );
   }

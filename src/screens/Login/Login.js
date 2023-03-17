@@ -21,7 +21,7 @@ const Login = () => {
     try {
       await login(user.username, user.password);
 
-      navigate("/user");
+      navigate("");
       window.location.reload();
     } catch (error) {
       alert("Invalid username or password");
@@ -50,7 +50,8 @@ const Login = () => {
         );
       }
 
-      navigate("/user");
+      navigate("");
+      window.location.reload();
     } catch (error) {
       let message = error.message;
       message = message

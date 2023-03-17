@@ -15,12 +15,12 @@ const AuthLayout = (props) => {
           index
           element={
             <>
-              <Header path="/user" />
+              <Header path="" />
               <Home />
             </>
           }
         />
-        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />

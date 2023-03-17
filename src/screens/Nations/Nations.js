@@ -180,7 +180,7 @@ const Nations = (props) => {
                       >
                         <div className="dropdown-content">
                           <Link
-                            to={`/user/edit-nation/${nation._id}`}
+                            to={`/edit-nation/${nation._id}`}
                             className="dropdown-item"
                             style={{ backgroundColor: "green", color: "white" }}
                           >
