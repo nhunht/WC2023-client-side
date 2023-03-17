@@ -150,6 +150,7 @@ const Players = (props) => {
           <button
             className="button"
             style={{ backgroundColor: "green", color: "white" }}
+            hidden={!props.isAdmin}
             onClick={openPopup}
           >
             Add

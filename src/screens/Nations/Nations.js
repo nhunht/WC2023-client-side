@@ -133,6 +133,7 @@ const Nations = (props) => {
           <button
             className="button is-primary"
             style={{ backgroundColor: "green", color: "white" }}
+            hidden={!props.isAdmin}
             onClick={openPopup}
           >
             Add

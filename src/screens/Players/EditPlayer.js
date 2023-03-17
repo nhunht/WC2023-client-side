@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PlayerApi from "../../apis/services/Player";
 import { useNavigate } from "react-router-dom";
 
-const EditPlayer = () => {
+const EditPlayer = (props) => {
   const [title, setTitle] = useState("");
   const [player, setPlayer] = useState(null);
   const [nations, setNations] = useState([]);
@@ -73,6 +73,7 @@ const EditPlayer = () => {
                   onChange={(e) =>
                     setPlayer({ ...player, name: e.target.value })
                   }
+                  readOnly={!props.isAdmin}
                 />
               </div>
             </div>
@@ -92,6 +93,7 @@ const EditPlayer = () => {
                       setPlayer({ ...player, nationId: e.target.value })
                     }
                     defaultValue={player && player.nationId}
+                    disabled={!props.isAdmin}
                   >
                     {/* Nations map */}
                     {nations &&
@@ -125,6 +127,7 @@ const EditPlayer = () => {
                       setPlayer({ ...player, position: e.target.value })
                     }
                     defaultValue={player && player.position}
+                    disabled={!props.isAdmin}
                   >
                     {/* Positions map */}
                     {positions &&
@@ -161,6 +164,7 @@ const EditPlayer = () => {
                     setPlayer({ ...player, goals: e.target.value })
                   }
                   required
+                  readOnly={!props.isAdmin}
                 />
               </div>
             </div>
@@ -179,6 +183,7 @@ const EditPlayer = () => {
                     onChange={(e) =>
                       setPlayer({ ...player, isCaptain: e.target.value })
                     }
+                    disabled={!props.isAdmin}
                   >
                     {/* Player is captain? */}
                     <option selected={isCaptain} value="true">
@@ -210,12 +215,13 @@ const EditPlayer = () => {
                   onChange={(e) =>
                     setPlayer({ ...player, image: e.target.value })
                   }
+                  readOnly={!props.isAdmin}
                 />
               </div>
             </div>
           </div>
         </div>
-        <div className="field is-horizontal">
+        <div className="field is-horizontal" hidden={!props.isAdmin}>
           <div className="field-label is-normal"></div>
           <div className="field-body">
             <div className="field">

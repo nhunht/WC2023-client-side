@@ -49,7 +49,10 @@ const UserLayout = () => {
           path="/user"
           element={<User user={user} isAdmin={user && user.isAdmin} />}
         />
-        <Route path="/edit-player/*" element={<EditPlayer />} />
+        <Route
+          path="/edit-player/*"
+          element={<EditPlayer isAdmin={user && user.isAdmin} />}
+        />
         <Route path="/edit-nation/*" element={<EditNation />} />
         <Route
           path="/edit-user/*"
