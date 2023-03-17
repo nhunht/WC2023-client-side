@@ -22,6 +22,7 @@ const Login = () => {
       await login(user.username, user.password);
 
       navigate("/user");
+      window.location.reload();
     } catch (error) {
       alert("Invalid username or password");
     }

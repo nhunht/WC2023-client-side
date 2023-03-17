@@ -90,6 +90,8 @@ const Nations = (props) => {
 
       if (status < 400) {
         fetchData();
+      } else {
+        alert("Delete failed, some players are linked to this nation");
       }
     } catch (error) {
       console.log(error);

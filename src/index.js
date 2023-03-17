@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
-import AuthLayout from "./layouts/Auth";
-import UserLayout from "./layouts/User";
+import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { AuthContextProvider } from "./apis/auth/AuthContext";
+import AuthorRoute from "./apis/auth/AuthorRoute";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -12,10 +11,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthContextProvider>
-        <Routes>
-          <Route path="/*" element={<AuthLayout />} />
-          <Route path="/user/*" element={<UserLayout />} />
-        </Routes>
+        <AuthorRoute />
       </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>

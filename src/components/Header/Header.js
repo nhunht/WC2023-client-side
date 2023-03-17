@@ -16,6 +16,7 @@ const Header = (props) => {
       localStorage.removeItem("name");
 
       navigate("/login");
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +31,7 @@ const Header = (props) => {
     >
       <div className="navbar-brand">
         <div className="tabs is-large">
-          <NavLink to={path}>
+          <NavLink to="/">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV5nyBspTX9fE7joIYpK-1sPcplcNe-a7ErQ&usqp=CAU"
               width="120"
