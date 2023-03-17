@@ -41,7 +41,7 @@ const UserLayout = () => {
         <Route path="/list" element={<User user={user} />} />
         <Route path="/edit-player/*" element={<EditPlayer />} />
         <Route path="/edit-nation/*" element={<EditNation />} />
-        <Route path="/edit-user/*" element={<EditUser />} />
+        <Route path="/edit-user/*" element={<EditUser user={user} setUser={setUser} />} />
         <Route path="/change-password" element={<ChangePassword />} />
       </Routes>
     </>

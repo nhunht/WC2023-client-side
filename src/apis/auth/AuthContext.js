@@ -35,8 +35,8 @@ export const AuthContextProvider = ({ children }) => {
     return confirmPasswordReset(auth, oobCode, newPassword);
   };
 
-  const changePassword = (email, password) => {
-    return updatePassword(auth.currentUser, password);
+  const changePassword = (newPassword) => {
+    return updatePassword(auth.currentUser, newPassword);
   };
 
   const login = (email, password) => {

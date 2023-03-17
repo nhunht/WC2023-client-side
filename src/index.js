@@ -13,7 +13,6 @@ root.render(
     <BrowserRouter>
       <AuthContextProvider>
         <Routes>
-          <Route index element={<UserLayout />} />
           <Route path="/*" element={<AuthLayout />} />
           <Route path="/user/*" element={<UserLayout />} />
         </Routes>

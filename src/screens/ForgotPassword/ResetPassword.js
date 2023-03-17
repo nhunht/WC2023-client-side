@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UserAuth } from "../../apis/auth/AuthContext";
 import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ResetPassword = (props) => {
   const [newPassword, setNewPassword] = useState("");
@@ -8,6 +9,7 @@ const ResetPassword = (props) => {
   const [searchParams] = useSearchParams();
 
   const { confirmResetPassword } = UserAuth();
+  const navigate = useNavigate();
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ const ResetPassword = (props) => {
       await confirmResetPassword(searchParams.get("oobCode"), newPassword);
       alert("Your password has been reset successfully!");
       // Redirect the user to the login page, or some other appropriate page
-      props.history.push("/login");
+      navigate("/login");
     } catch (error) {
       let message = error.message;
       message = message
