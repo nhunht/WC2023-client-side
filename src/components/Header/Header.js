@@ -95,7 +95,7 @@ const Header = (props) => {
                       </Link>
                       <Link
                         className="dropdown-item"
-                        href={path + "/changePassword"}
+                        to={path + "/change-password"}
                       >
                         <i
                           className="fa fa-key"

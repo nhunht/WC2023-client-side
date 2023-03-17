@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import UserApi from "../apis/services/User";
 import Header from "../components/Header/Header";
+import ChangePassword from "../screens/ChangePassword/ChangePassword";
 import Home from "../screens/Home/Home";
 import EditNation from "../screens/Nations/EditNation";
 import Nations from "../screens/Nations/Nations";
@@ -41,6 +42,7 @@ const UserLayout = () => {
         <Route path="/edit-player/*" element={<EditPlayer />} />
         <Route path="/edit-nation/*" element={<EditNation />} />
         <Route path="/edit-user/*" element={<EditUser />} />
+        <Route path="/change-password" element={<ChangePassword />} />
       </Routes>
     </>
   );

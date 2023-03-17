@@ -109,6 +109,14 @@ const Login = () => {
                       }
                     />
                   </div>
+                  <div className="form-group navbar-end">
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to="/forgot-password"
+                    >
+                      Forgot Password?
+                    </Link>
+                  </div>
                   <div className="col-md-12 text-center">
                     <Link
                       className="btn btn-block mybtn btn-primary tx-tfm"

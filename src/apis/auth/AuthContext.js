@@ -7,6 +7,8 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
+  confirmPasswordReset,
+  updatePassword,
 } from "firebase/auth";
 import { createContext, useContext, useEffect } from "react";
 import { auth } from "./firebase";
@@ -26,6 +28,15 @@ export const AuthContextProvider = ({ children }) => {
 
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
+  };
+
+  // change user password to the new one through the link from the email
+  const confirmResetPassword = (oobCode, newPassword) => {
+    return confirmPasswordReset(auth, oobCode, newPassword);
+  };
+
+  const changePassword = (email, password) => {
+    return updatePassword(auth.currentUser, password);
   };
 
   const login = (email, password) => {
@@ -69,6 +80,8 @@ export const AuthContextProvider = ({ children }) => {
         login,
         loginWithGoogle,
         resetPassword,
+        confirmResetPassword,
+        changePassword,
         logout,
       }}
     >
