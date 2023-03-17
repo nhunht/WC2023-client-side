@@ -27,7 +27,7 @@ const Players = (props) => {
   useEffect(() => {
     let params = {
       pageIndex: pageIndex ?? 1,
-    }
+    };
 
     if (search) {
       params.search = search;
@@ -167,7 +167,7 @@ const Players = (props) => {
               <th>Position</th>
               <th>Goals</th>
               <th>Is Captain</th>
-              <th>Actions</th>
+              <th hidden={!props.isAdmin}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -184,7 +184,7 @@ const Players = (props) => {
                   <td>{player.position}</td>
                   <td>{player.goals}</td>
                   <td>{`${player.isCaptain}`}</td>
-                  <td>
+                  <td hidden={!props.isAdmin}>
                     <div className="dropdown is-hoverable">
                       <div className="dropdown-trigger">
                         <i

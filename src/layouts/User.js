@@ -21,6 +21,7 @@ const UserLayout = () => {
         isAdmin: false,
       });
 
+      console.log(response.users[0]);
       setUser(response.users[0]);
     };
 
@@ -36,12 +37,24 @@ const UserLayout = () => {
       <Header path="" user={user} />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/players" element={<Players />} />
-        <Route path="/nations" element={<Nations />} />
-        <Route path="/user" element={<User user={user} />} />
+        <Route
+          path="/players"
+          element={<Players isAdmin={user && user.isAdmin} />}
+        />
+        <Route
+          path="/nations"
+          element={<Nations isAdmin={user && user.isAdmin} />}
+        />
+        <Route
+          path="/user"
+          element={<User user={user} isAdmin={user && user.isAdmin} />}
+        />
         <Route path="/edit-player/*" element={<EditPlayer />} />
         <Route path="/edit-nation/*" element={<EditNation />} />
-        <Route path="/edit-user/*" element={<EditUser user={user} setUser={setUser} />} />
+        <Route
+          path="/edit-user/*"
+          element={<EditUser user={user} setUser={setUser} />}
+        />
         <Route path="/change-password" element={<ChangePassword />} />
       </Routes>
     </>

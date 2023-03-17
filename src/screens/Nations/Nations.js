@@ -21,7 +21,7 @@ const Nations = (props) => {
   useEffect(() => {
     let params = {
       pageIndex: pageIndex ?? 1,
-    }
+    };
 
     if (search) {
       params.search = search;
@@ -148,7 +148,7 @@ const Nations = (props) => {
               <th>Ensign</th>
               <th>Name</th>
               <th>Description</th>
-              <th>Actions</th>
+              <th hidden={!props.isAdmin}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -163,7 +163,7 @@ const Nations = (props) => {
                   </td>
                   <td>{nation.name}</td>
                   <td>{nation.description}</td>
-                  <td>
+                  <td hidden={!props.isAdmin}>
                     <div className="dropdown is-hoverable">
                       <div className="dropdown-trigger">
                         <i

@@ -28,7 +28,7 @@ const User = (props) => {
           <th>Email</th>
           <th>Name</th>
           <th>YOB</th>
-          <th>Action</th>
+          <th hidden={props.isAdmin}>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -39,7 +39,7 @@ const User = (props) => {
               <td>{user.username}</td>
               <td>{user.name}</td>
               <td>{user.YOB}</td>
-              <td>
+              <td hidden={props.isAdmin}>
                 <div className="buttons are-small">
                   <Link to={`/edit-user/${user._id}`}>
                     <button className="button is-warning is-light ">

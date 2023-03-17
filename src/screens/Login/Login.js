@@ -77,10 +77,11 @@ const Login = () => {
               <div className="message-body">
                 <form method="post">
                   <div className="form-group">
-                    <label
-                      className="fas fa-envelope"
-                      htmlFor="exampleInputEmail1"
-                    >
+                    <label htmlFor="exampleInputEmail1">
+                      <i
+                        className="fas fa-envelope"
+                        style={{ marginRight: "6px" }}
+                      />
                       Email address
                     </label>
                     <input
@@ -96,7 +97,11 @@ const Login = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label className="fas fa-key" htmlFor="exampleInputEmail1">
+                    <label htmlFor="exampleInputEmail1">
+                      <i
+                        className="fas fa-key"
+                        style={{ marginRight: "6px" }}
+                      />
                       Password
                     </label>
                     <input
